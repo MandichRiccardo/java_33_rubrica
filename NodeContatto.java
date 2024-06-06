@@ -31,6 +31,15 @@ public class NodeContatto{
         }
     }
 
+    public String cerca(String nome, String cognome) throws ContactNotFindRuntimeException {
+        try{
+            if(value.getNome().equals(nome) && value.getCognome().equals(cognome)) return value.getNumero();
+            else return next.cerca(nome, cognome);
+        }catch (NullPointerException e){
+            return null;
+        }
+    }
+
     public boolean equals(NodeContatto n) {
         return n.value.equals(value);
     }

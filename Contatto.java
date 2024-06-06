@@ -1,9 +1,9 @@
 import java.util.Objects;
 
 public class Contatto{
-    final String nome;
-    final String cognome;
-    final String numero;
+    private final String nome;
+    private final String cognome;
+    private final String numero;
 
     public Contatto(){
         System.out.println("inserisci il nome di questo contatto");
