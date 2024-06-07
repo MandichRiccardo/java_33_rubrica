@@ -3,8 +3,8 @@ public class Rubrica{
     private int size;
 
     Rubrica(){
-        System.out.println("vuoi inserire il primo nodo?");
-        add(getBoolean() ? new NodeContatto(new Contatto()) : null);
+        size = 0;
+        start = null;
     }
 
     public void add(NodeContatto n) throws ContactAlreadyAddedRuntimeException {
@@ -28,6 +28,13 @@ public class Rubrica{
         size--;
     }
 
+    public String cerca(){
+        System.out.println("inserisci il nome da cercare");
+        String nome = Contatto.getString();
+        System.out.println("inserisci il cognome da cercare");
+        return cerca(nome, Contatto.getString());
+    }
+
     public String cerca(String nome, String cognome){
         try{
             if(start.getValue().getNome().equals(nome) && start.getValue().getCognome().equals(cognome)) return start.getValue().getNumero();
@@ -44,5 +51,15 @@ public class Rubrica{
         }catch (java.util.InputMismatchException e){
             return getBoolean();
         }
+    }
+
+    @Override
+    public String toString(){
+        String info = "";
+        info += "size:\t" + size + "\n";
+        info += "\tlista iniziata\n";
+        if(start != null) info += "\tstart:\n" + start + "\n";
+        else info += "\tlista terminata\n";
+        return info;
     }
 }

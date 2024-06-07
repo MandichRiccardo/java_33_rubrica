@@ -43,4 +43,12 @@ public class NodeContatto{
     public boolean equals(NodeContatto n) {
         return n.value.equals(value);
     }
+
+    @Override
+    public String toString(){
+        String info = value + "\n";
+        info += "\t\t\tsuccessivo:\n";
+        info += next;
+        return info;
+    }
 }

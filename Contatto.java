@@ -34,10 +34,10 @@ public class Contatto{
 
     @Override
     public String toString() {
-        String info = super.toString() + "\n";
-        info += "nome:\t\t" + nome + "\n";
-        info += "cognome:\t" + cognome + "\n";
-        info += "numero:\t\t" + numero + "\n";
+        String info = "\t\t\t" + super.toString() + "\n";
+        info += "\t\t\tnome:\t\t" + nome + "\n";
+        info += "\t\t\tcognome:\t" + cognome + "\n";
+        info += "\t\t\tnumero:\t\t" + numero + "\n";
         return info;
     }
 
